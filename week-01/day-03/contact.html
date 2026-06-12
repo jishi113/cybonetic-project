@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact Jishi Shah - Web Developer" />
+    <title>Contact | Jishi Shah</title>
+  </head>
+  <body>
+    <h1>Contact Me</h1>
+
+    <form action="/contact" method="POST">
+      <!-- Name -->
+      <div>
+        <label for="fullname">Full Name *</label><br />
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          required
+          minlength="2"
+          maxlength="50"
+          placeholder="Enter your full name"
+        />
+      </div>
+      <br />
+
+      <!-- Email -->
+      <div>
+        <label for="email">Email Address *</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="you@example.com"
+        />
+      </div>
+      <br />
+
+      <!-- Phone -->
+      <div>
+        <label for="phone">Phone Number</label><br />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="[6-9][0-9]{9}"
+          title="Enter a valid 10-digit Indian mobile number"
+          placeholder="10-digit phone number"
+        />
+      </div>
+      <br />
+
+      <!-- Subject Dropdown -->
+      <div>
+        <label for="subject">Subject *</label><br />
+        <select id="subject" name="subject" required>
+          <option value="">-- Select a subject --</option>
+          <option value="internship">Internship Query</option>
+          <option value="project">Project Discussion</option>
+          <option value="collaboration">Collaboration</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <br />
+
+      <!-- Message -->
+      <div>
+        <label for="message">Message *</label><br />
+        <textarea
+          id="message"
+          name="message"
+          required
+          minlength="20"
+          rows="5"
+          cols="40"
+          placeholder="Write your message here..."
+        ></textarea>
+      </div>
+      <br />
+
+      <button type="submit">Send Message</button>
+      <button type="reset">Clear Form</button>
+    </form>
+  </body>
+</html>
