@@ -1,11 +1,3 @@
-<!-- h1 — Jishi Shah — Web Developer
-h2 #1 — About Me with paragraph
- h2 #2 — My Technical Skills with unordered list
- h2 #3 — My Top 3 Goals with ordered list
-Navigation with anchor links
-image with figcaption
-GitHub link with rel="noopener noreferrer"-->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,74 +7,109 @@ GitHub link with rel="noopener noreferrer"-->
     <title>Jishi Shah | Web Developer</title>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav>
-      <a href="#about">About</a> | <a href="#skills">Skills</a> |
-      <a href="#goals">Goals</a> |
-      <a href="#technologies">Technologies</a>
-    </nav>
-
-    <h1>Jishi Shah — Web Developer</h1>
-
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am a <strong>passionate web developer</strong> currently doing a Web
-        Development Internship at <em>Cybonetic Technologies</em>.
-      </p>
-      <p>
-        I am a CSE student at Banasthali Vidyapeeth, learning full stack web
-        development from scratch.
-      </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>My Technical Skills</h2>
-      <h3>Frontend Technologies</h3>
-      <ul>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-      </ul>
-      <h3>Backend Technologies</h3>
-      <ul>
-        <li>PHP</li>
-        <li>Laravel</li>
-        <li>MySQL</li>
-      </ul>
-      <figure>
-        <img
-          src="https://picsum.photos/800/400"
-          alt="Web development workspace"
-          width="800"
-          height="400"
-        />
-        <figcaption>
-          My web development journey at Cybonetic Technologies
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Goals Section -->
-    <section id="goals">
-      <h2>My Top 3 Goals</h2>
-      <ol>
-        <li>Complete all 8 weeks of internship successfully</li>
-        <li>Build a full stack project using Laravel</li>
-        <li>Get a strong recommendation letter</li>
-      </ol>
-    </section>
-
-    <hr />
-
-    <!-- GitHub Link -->
-    <a
-      href="https://github.com/jishi113"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Visit My GitHub Profile</a
+    <!-- Skip to main content link -->
+    <a href="#main-content" style="position: absolute; left: -9999px; top: 0"
+      >Skip to main content</a
     >
+
+    <!-- Header -->
+    <header>
+      <a href="/">Jishi Shah</a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#goals">Goals</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero -->
+      <section id="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">Jishi Shah — Web Developer</h1>
+        <p>
+          CSE Student at Banasthali Vidyapeeth | Intern at Cybonetic
+          Technologies
+        </p>
+      </section>
+
+      <!-- About -->
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <p>
+          I am a <strong>passionate web developer</strong> currently doing a Web
+          Development Internship at <em>Cybonetic Technologies</em>.
+        </p>
+        <p>I am learning full stack web development from HTML to Laravel.</p>
+        <aside>
+          <h3>Quick Facts</h3>
+          <ul>
+            <li>College: Banasthali Vidyapeeth</li>
+            <li>Department: CSE</li>
+            <li>Internship: Cybonetic Technologies</li>
+            <li>
+              Duration: <time datetime="2026-06-08">June 2026</time> —
+              <time datetime="2026-08-08">August 2026</time>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">My Technical Skills</h2>
+        <p>These are the technologies I am learning during my internship.</p>
+        <h3>Frontend Technologies</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+        </ul>
+        <h3>Backend Technologies</h3>
+        <ul>
+          <li>PHP</li>
+          <li>Laravel</li>
+          <li>MySQL</li>
+        </ul>
+        <figure>
+          <img
+            src="https://picsum.photos/800/400"
+            alt="Web development workspace"
+            width="800"
+            height="400"
+          />
+          <figcaption>
+            My web development journey at Cybonetic Technologies
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Goals -->
+      <section id="goals" aria-labelledby="goals-heading">
+        <h2 id="goals-heading">My Top 3 Goals</h2>
+        <p>These are my goals for this 8 week internship.</p>
+        <ol>
+          <li>Complete all 8 weeks of internship successfully</li>
+          <li>Build a full stack project using Laravel</li>
+          <li>Get a strong recommendation letter</li>
+        </ol>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Jishi Shah. All rights reserved.</p>
+      <address>
+        <a href="mailto:jishishah2021y@gmail.com">jishishah2021y@gmail.com</a>
+      </address>
+      <a
+        href="https://github.com/jishi113"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Visit My GitHub Profile</a
+      >
+    </footer>
   </body>
 </html>
