@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Jishi Shah - Full Stack Web Developer. Get in touch for collaboration or opportunities."
+    />
+    <title>Contact | Jishi Shah</title>
+  </head>
+  <body>
+    <a href="#main-content" style="position: absolute; left: -9999px"
+      >Skip to main content</a
+    >
+
+    <header>
+      <a href="index.html">Jishi Shah</a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="contact" aria-labelledby="contact-heading">
+        <h1 id="contact-heading">Get in Touch</h1>
+        <p>
+          Feel free to reach out for collaborations, opportunities or just a
+          hello!
+        </p>
+
+        <form action="/contact" method="POST" aria-label="Contact form">
+          <label for="name">Full Name *</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="2"
+            placeholder="Your full name"
+          /><br /><br />
+
+          <label for="email">Email Address *</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+          /><br /><br />
+
+          <label for="phone">Phone Number</label><br />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="[6-9][0-9]{9}"
+            placeholder="10-digit number"
+          /><br /><br />
+
+          <label for="subject">Subject *</label><br />
+          <select id="subject" name="subject" required>
+            <option value="">-- Select subject --</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="opportunity">Job Opportunity</option>
+            <option value="project">Project Discussion</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option></select
+          ><br /><br />
+
+          <label for="message">Message *</label><br />
+          <textarea
+            id="message"
+            name="message"
+            required
+            minlength="20"
+            rows="5"
+            placeholder="Write your message..."
+          ></textarea
+          ><br /><br />
+
+          <button type="submit">Send Message</button>
+          <button type="reset">Clear</button>
+        </form>
+
+        <address>
+          <h2>Direct Contact</h2>
+          <p>
+            📧
+            <a href="mailto:jishishah2021y@gmail.com"
+              >jishishah2021y@gmail.com</a
+            >
+          </p>
+          <p>📞 <a href="tel:+917877675838">+91 7877675838</a></p>
+          <p>
+            💼
+            <a
+              href="https://linkedin.com/in/jishi-shah-9a464b310"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </p>
+          <p>
+            🐙
+            <a
+              href="https://github.com/jishi113"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </p>
+        </address>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Jishi Shah. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="mailto:jishishah2021y@gmail.com">Email</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
