@@ -1,0 +1,64 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1 {
+  color: #2d3a5c;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #0055ee;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #333;
+}
+
+/* Navigation */
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Child Selector */
+nav > a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #333;
+}
+
+/* Pseudo Class */
+nav > a:hover {
+  color: #0055ee;
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Descendant Selector */
+.card p {
+  color: #555;
+}
