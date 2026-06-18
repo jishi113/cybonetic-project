@@ -7,20 +7,30 @@
     <title>Cybonetic Technologies</title>
   </head>
   <body>
-    <!-- Sticky Navigation -->
-    <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">Pricing</a>
-      <a href="#">Contact</a>
-    </nav>
+    
+    <header class="navbar">
+      <a href="#" class="logo">Cybonetic<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a href="#" class="btn-cta">Get Started</a>
+    </header>
 
-    <!-- Welcome Section -->
-    <section class="card">
-      <h1>Cybonetic Technologies</h1>
-      <h2>Welcome to Cybonetic Technologies</h2>
-      <p>We build modern web solutions and digital products.</p>
+   
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to <span>Cybonetic</span></h1>
+        <p class="tagline">Powering the Digital Future</p>
+        <p class="sub-text">
+          We build modern web solutions and digital products.
+        </p>
+      </div>
     </section>
+
+    
 
     <!-- Services Section -->
     <section class="card">
@@ -28,7 +38,53 @@
       <p>Web Development, UI Design, Cloud Solutions and Consulting.</p>
     </section>
 
-    <!-- Image Card with Overlay -->
+    
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="icon">💻</div>
+        <h3>Web Development</h3>
+        <p>Modern websites and web applications</p>
+      </div>
+      <div class="skill-card">
+        <div class="icon">🎨</div>
+        <h3>UI/UX Design</h3>
+        <p>Beautiful, user-friendly interfaces</p>
+      </div>
+      <div class="skill-card">
+        <div class="icon">☁️</div>
+        <h3>Cloud Solutions</h3>
+        <p>Scalable cloud infrastructure</p>
+      </div>
+    </div>
+
+   
+    <div class="features">
+      <!-- Feature 1: Image left, Text right (default order) -->
+      <div class="feature-block feature-1">
+        <div class="image">🖥️</div>
+        <div class="text">
+          <h3>Modern Web Development</h3>
+          <p>
+            We build fast, responsive websites using the latest technologies.
+            Our focus is on performance and user experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 2: Text left, Image right (using order) -->
+      <div class="feature-block feature-2">
+        <div class="image">🎨</div>
+        <div class="text">
+          <h3>Beautiful UI Design</h3>
+          <p>
+            We create stunning interfaces that are both visually appealing and
+            easy to use. Design that converts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
     <div class="image-card">
       <img src="https://via.placeholder.com/400x300" alt="Project" />
       <div class="overlay">
@@ -37,7 +93,7 @@
       </div>
     </div>
 
-    <!-- Horizontal Scrolling Skills -->
+    
     <div class="skills-row">
       <div class="skill-item">HTML5</div>
       <div class="skill-item">CSS3</div>
@@ -51,9 +107,11 @@
       <div class="skill-item">Figma</div>
     </div>
 
-    <!-- z-index Stacking Bug Demo -->
+    
     <h2 style="text-align: center; margin-top: 40px">z-index Stacking Demo</h2>
-    <div style="display: flex; justify-content: center; gap: 20px">
+    <div
+      style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap"
+    >
       <div class="parent-a">
         Parent A (z-index: 1)
         <div class="child-a">Child A (z-index: 9999)</div>
@@ -64,7 +122,40 @@
       </div>
     </div>
 
-    <!-- Back to Top Button -->
+    
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Team</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <a href="#">Blog</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Testimonials</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">Web Design</a>
+          <a href="#">Development</a>
+          <a href="#">Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="#">Email</a>
+          <a href="#">Phone</a>
+          <a href="#">Social</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Cybonetic Technologies. All rights reserved.
+      </div>
+    </footer>
+
+    
     <button
       class="back-to-top"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
