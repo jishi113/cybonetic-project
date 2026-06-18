@@ -227,9 +227,7 @@ nav > a:hover {
   box-shadow: 0 4px 12px rgba(0, 85, 238, 0.15);
   transform: translateY(-2px);
 }
-/* ================================================================
-   DAY 3: FLEXBOX MASTERY
-   ================================================================ */
+/* DAY 3*/
 
 /* ---------- 1. FLEXBOX NAVBAR ---------- */
 .navbar {
@@ -536,5 +534,272 @@ nav > a:hover {
 
   .skill-card {
     flex: 1 1 100%;
+  }
+}
+/* ================================================================
+   DAY 4: CSS GRID MASTERY
+   ================================================================ */
+
+/* ---------- 1. GRID-POWERED PAGE LAYOUT (grid-template-areas) ---------- */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 70px 1fr 60px;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 16px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 400px;
+}
+
+.grid-header {
+  grid-area: header;
+  background: #0a1628;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.grid-sidebar {
+  grid-area: sidebar;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.grid-sidebar h3 {
+  margin-top: 0;
+}
+
+.grid-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-sidebar ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+}
+
+.grid-main {
+  grid-area: main;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.grid-main h2 {
+  margin-top: 0;
+}
+
+.grid-footer {
+  grid-area: footer;
+  background: #0a1628;
+  color: #666;
+  padding: 16px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ---------- 2. RESPONSIVE GALLERY (auto-fit, minmax) ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  background: white;
+  padding: 60px 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-weight: 600;
+  color: #2d3a5c;
+  font-size: 18px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: #0055ee;
+}
+
+/* ---------- 3. PRICING TABLE WITH GRID ---------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+  align-items: start;
+}
+
+.plan {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.plan h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.plan .price {
+  font-size: 36px;
+  font-weight: bold;
+  color: #0055ee;
+  margin: 10px 0 0 0;
+}
+
+.plan .period {
+  color: #888;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.plan ul li {
+  padding: 6px 0;
+  color: #555;
+}
+
+.plan button {
+  background: #0055ee;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.plan button:hover {
+  background: #0044cc;
+}
+
+.plan.featured {
+  border-color: #0055ee;
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(0, 85, 238, 0.18);
+}
+
+.plan.enterprise {
+  border-color: #0a1628;
+}
+
+/* ---------- 4. BENTO BOX LAYOUT ---------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 120px);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.bento-item {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #2d3a5c;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.bento-featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: linear-gradient(135deg, #0055ee 0%, #0a1628 100%);
+  color: white;
+  font-size: 24px;
+  border: none;
+}
+
+.bento-featured:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px rgba(0, 85, 238, 0.3);
+}
+
+/* ---------- 5. RESPONSIVE DESIGN FOR DAY 4 ---------- */
+@media (max-width: 768px) {
+  /* Grid layout stacks on mobile */
+  .grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+
+  /* Bento grid on mobile */
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 100px);
+  }
+
+  .bento-featured {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .plan.featured {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 80px);
+  }
+
+  .bento-featured {
+    grid-column: span 2;
   }
 }
