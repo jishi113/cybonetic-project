@@ -1,100 +1,441 @@
-/* CSS Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  line-height: 1.6;
-}
-
-/* Headings */
+/* ================================================================
+   HEADINGS & TYPOGRAPHY
+   ================================================================ */
 h1 {
-  color: #2d3a5c;
+  color: var(--color-text, #2d3a5c);
   text-align: center;
-  margin-top: 20px;
+  margin-top: var(--space-sm, 20px);
+  font-family: var(--font-heading);
 }
 
 h2 {
-  color: #0055ee;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  color: var(--color-primary, #0055ee);
+  margin-top: var(--space-lg, 40px);
+  margin-bottom: var(--space-xs, 10px);
+  font-family: var(--font-heading);
 }
 
 h3 {
-  color: #333;
+  color: var(--color-text, #333);
+  font-family: var(--font-heading);
 }
 
-/* Navigation */
-nav {
-  text-align: center;
-  margin: 20px 0;
+/* Headings with animation */
+.hero-content h1 {
+  animation: fadeInUp 700ms ease-out forwards;
+  opacity: 0;
 }
 
-/* Child Selector */
-nav > a {
-  text-decoration: none;
-  margin: 0 10px;
-  color: #333;
+.hero-content .tagline {
+  animation: fadeInUp 700ms ease-out 150ms forwards;
+  opacity: 0;
 }
 
-/* Pseudo Class */
-nav > a:hover {
-  color: #0055ee;
+.hero-content .sub-text {
+  animation: fadeInUp 700ms ease-out 300ms forwards;
+  opacity: 0;
 }
-
-/* Card Styling */
+/* ================================================================
+   CARDS
+   ================================================================ */
 .card {
-  background: white;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--color-bg, white);
+  padding: var(--space-sm, 20px);
+  margin: var(--space-sm, 20px);
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--color-border, #ddd);
+  box-shadow: var(--shadow-card, 0 2px 8px rgba(0, 0, 0, 0.1));
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Descendant Selector */
 .card p {
-  color: #555;
+  color: var(--color-text-muted, #555);
 }
-/* Sticky Navigation */
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm, 16px) var(--space-md, 32px);
+  background: var(--color-bg, white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
-  background: white;
-  padding: 15px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
-  text-align: center;
 }
 
-/* Navigation Links inside navbar */
-.navbar a {
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-text, #2d3a5c);
   text-decoration: none;
-  margin: 0 15px;
-  color: #2d3a5c;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #0055ee;
-  background: rgba(0, 85, 238, 0.08);
+.logo span {
+  color: var(--color-primary, #0055ee);
 }
-/* Image Card with Overlay */
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text, #2d3a5c);
+  font-weight: 600;
+  min-height: 44px;
+  min-width: 44px;
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--color-primary, #0055ee);
+}
+
+.btn-cta {
+  background: var(--color-primary, #0055ee);
+  color: var(--color-white, white);
+  padding: var(--space-xs, 10px) var(--space-md, 24px);
+  border-radius: var(--radius-md, 8px);
+  text-decoration: none;
+  font-weight: 600;
+  min-height: 44px;
+  min-width: 44px;
+  transition: background var(--transition-fast);
+}
+
+.btn-cta:hover {
+  background: var(--color-primary-dark, #0044cc);
+}
+/* ================================================================
+   HERO SECTION
+   ================================================================ */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  text-align: center;
+  padding: var(--space-sm, 20px);
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  margin-bottom: var(--space-xs, 10px);
+}
+
+.hero-content h1 span {
+  color: var(--color-primary, #0055ee);
+}
+
+.hero-content .tagline {
+  font-size: 24px;
+  color: var(--color-text, #2d3a5c);
+}
+
+.hero-content .sub-text {
+  font-size: 16px;
+  color: var(--color-text-muted, #888);
+  margin-top: var(--space-xs, 10px);
+}
+/* ================================================================
+   FLEXBOX COMPONENTS
+   ================================================================ */
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  gap: var(--space-sm, 20px);
+  max-width: 1100px;
+  margin: var(--space-lg, 40px) auto;
+  padding: 0 var(--space-sm, 20px);
+}
+
+.skill-card {
+  flex: 1;
+  background: var(--color-bg, white);
+  padding: var(--space-md, 30px) var(--space-sm, 20px);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--color-border, #e0e0e0);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.skill-card .icon {
+  font-size: 40px;
+}
+
+.skill-card h3 {
+  color: var(--color-text, #2d3a5c);
+  margin-top: var(--space-xs, 10px);
+}
+
+.skill-card p {
+  color: var(--color-text-muted, #666);
+  font-size: 14px;
+}
+
+/* Features */
+.features {
+  max-width: 1100px;
+  margin: var(--space-lg, 40px) auto;
+  padding: 0 var(--space-sm, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg, 40px);
+}
+
+.feature-block {
+  display: flex;
+  gap: var(--space-lg, 40px);
+  align-items: center;
+}
+
+.feature-block .text {
+  flex: 1;
+}
+
+.feature-block .image {
+  flex: 1;
+  background: #e8ecf1;
+  border-radius: var(--radius-lg, 12px);
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 60px;
+}
+
+.feature-1 .image {
+  order: 1;
+}
+.feature-1 .text {
+  order: 2;
+}
+.feature-2 .image {
+  order: 2;
+}
+.feature-2 .text {
+  order: 1;
+}
+/* ================================================================
+   GRID COMPONENTS
+   ================================================================ */
+
+/* Grid Layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 70px 1fr 60px;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 16px;
+  max-width: 1100px;
+  margin: var(--space-lg, 40px) auto;
+  padding: 0 var(--space-sm, 20px);
+  min-height: 400px;
+}
+
+.grid-header {
+  grid-area: header;
+  background: var(--color-bg-dark, #0a1628);
+  color: var(--color-white, white);
+  padding: var(--space-sm, 20px);
+  border-radius: var(--radius-md, 8px);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.grid-sidebar {
+  grid-area: sidebar;
+  background: var(--color-bg, white);
+  padding: var(--space-sm, 20px);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--color-border, #ddd);
+}
+
+.grid-main {
+  grid-area: main;
+  background: var(--color-bg, white);
+  padding: var(--space-sm, 20px);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--color-border, #ddd);
+}
+
+.grid-footer {
+  grid-area: footer;
+  background: var(--color-bg-dark, #0a1628);
+  color: #666;
+  padding: var(--space-sm, 16px) var(--space-sm, 20px);
+  border-radius: var(--radius-md, 8px);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-sm, 20px);
+  max-width: 1100px;
+  margin: var(--space-sm, 20px) auto;
+  padding: 0 var(--space-sm, 20px);
+}
+
+.gallery-item {
+  background: var(--color-bg, white);
+  padding: 60px 20px;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--color-border, #ddd);
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-text, #2d3a5c);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary, #0055ee);
+}
+
+/* Pricing */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md, 24px);
+  max-width: 1100px;
+  margin: var(--space-sm, 20px) auto;
+  padding: 0 var(--space-sm, 20px);
+  align-items: start;
+}
+
+.plan {
+  background: var(--color-bg, white);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-md, 32px);
+  box-shadow: var(--shadow-card);
+  border: 2px solid transparent;
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.plan:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.plan .price {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--color-primary, #0055ee);
+  margin: var(--space-xs, 10px) 0 0 0;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm, 20px) 0;
+  text-align: left;
+}
+
+.plan ul li {
+  padding: 6px 0;
+  color: var(--color-text-muted, #555);
+}
+
+.plan button {
+  background: var(--color-primary, #0055ee);
+  color: var(--color-white, white);
+  border: none;
+  padding: var(--space-xs, 10px) var(--space-md, 30px);
+  border-radius: var(--radius-md, 6px);
+  cursor: pointer;
+  font-size: 16px;
+  min-height: 44px;
+  transition: background var(--transition-fast);
+}
+
+.plan button:hover {
+  background: var(--color-primary-dark, #0044cc);
+}
+
+.plan.featured {
+  border-color: var(--color-primary, #0055ee);
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(0, 85, 238, 0.18);
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 120px);
+  gap: 16px;
+  max-width: 1100px;
+  margin: var(--space-sm, 20px) auto;
+  padding: 0 var(--space-sm, 20px);
+}
+
+.bento-item {
+  background: var(--color-bg, white);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--color-border, #ddd);
+  padding: var(--space-sm, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--color-text, #2d3a5c);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.bento-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.bento-featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: linear-gradient(135deg, var(--color-primary, #0055ee) 0%, var(--color-bg-dark, #0a1628) 100%);
+  color: var(--color-white, white);
+  font-size: 24px;
+  border: none;
+}
+
+.bento-featured:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px rgba(0, 85, 238, 0.3);
+}
+/* ================================================================
+   IMAGE CARD WITH OVERLAY (Day 2)
+   ================================================================ */
 .image-card {
   position: relative;
   width: 400px;
-  border-radius: 12px;
+  max-width: 90%;
+  border-radius: var(--radius-lg, 12px);
   overflow: hidden;
-  margin: 20px auto;
+  margin: var(--space-sm, 20px) auto;
+  box-shadow: var(--shadow-card);
 }
 
 .image-card img {
@@ -108,10 +449,10 @@ nav > a:hover {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 20px;
+  color: var(--color-white, white);
+  padding: var(--space-sm, 20px);
   transform: translateY(100%);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 }
 
 .image-card:hover .overlay {
@@ -119,7 +460,7 @@ nav > a:hover {
 }
 
 .image-card .overlay h3 {
-  color: white;
+  color: var(--color-white, white);
   margin: 0 0 5px 0;
 }
 
@@ -127,70 +468,17 @@ nav > a:hover {
   color: #ddd;
   margin: 0;
 }
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: #0055ee;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 85, 238, 0.3);
-  transition: all 0.3s ease;
-  z-index: 999;
-}
 
-.back-to-top:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 85, 238, 0.4);
-}
-/* z-index Stacking Bug Demo */
-.parent-a {
-  position: relative;
-  z-index: 1;
-  background: #ff6b6b;
-  padding: 20px;
-  margin: 10px;
-  width: 200px;
-}
-
-.parent-b {
-  position: relative;
-  z-index: 2;
-  background: #4ecdc4;
-  padding: 20px;
-  margin: 10px;
-  width: 200px;
-}
-
-.child-a {
-  position: relative;
-  z-index: 9999;
-  background: #ffd93d;
-  padding: 10px;
-  margin: 5px;
-}
-
-.child-b {
-  position: relative;
-  z-index: 1;
-  background: #ffd93d;
-  padding: 10px;
-  margin: 5px;
-}
-/* Horizontal Scrolling Skills */
+/* ================================================================
+   SKILLS ROW - HORIZONTAL SCROLL (Day 2)
+   ================================================================ */
 .skills-row {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 20px 10px 30px 10px;
-  margin: 20px 0;
+  padding: var(--space-sm, 20px) var(--space-xs, 10px) var(--space-md, 30px) var(--space-xs, 10px);
+  margin: var(--space-sm, 20px) 0;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
@@ -205,222 +493,87 @@ nav > a:hover {
 }
 
 .skills-row::-webkit-scrollbar-thumb {
-  background: #0055ee;
+  background: var(--color-primary, #0055ee);
   border-radius: 4px;
 }
 
 .skill-item {
   flex: 0 0 auto;
-  padding: 12px 24px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: var(--space-xs, 12px) var(--space-md, 24px);
+  background: var(--color-bg, white);
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-card);
   font-weight: 500;
-  color: #2d3a5c;
+  color: var(--color-text, #2d3a5c);
   scroll-snap-align: start;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .skill-item:hover {
-  border-color: #0055ee;
-  box-shadow: 0 4px 12px rgba(0, 85, 238, 0.15);
+  border-color: var(--color-primary, #0055ee);
+  box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
 }
-/* DAY 3*/
 
-/* ---------- 1. FLEXBOX NAVBAR ---------- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  position: sticky;
-  top: 0;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2d3a5c;
-  text-decoration: none;
+/* ================================================================
+   Z-INDEX STACKING DEMO (Day 2)
+   ================================================================ */
+.parent-a {
+  position: relative;
+  z-index: 1;
+  background: #ff6b6b;
+  padding: var(--space-sm, 20px);
+  margin: var(--space-xs, 10px);
+  width: 200px;
+  border-radius: var(--radius-md, 8px);
+  color: var(--color-white, white);
 }
 
-.logo span {
-  color: #0055ee;
+.parent-b {
+  position: relative;
+  z-index: 2;
+  background: #4ecdc4;
+  padding: var(--space-sm, 20px);
+  margin: var(--space-xs, 10px);
+  width: 200px;
+  border-radius: var(--radius-md, 8px);
+  color: var(--color-white, white);
 }
 
-.nav-links {
-  display: flex;
-  gap: 28px;
-  align-items: center;
+.child-a {
+  position: relative;
+  z-index: 9999;
+  background: #ffd93d;
+  padding: var(--space-xs, 10px);
+  margin: 5px;
+  border-radius: 4px;
+  color: var(--color-text, #333);
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #2d3a5c;
-  font-weight: 600;
-  transition: color 0.2s;
+.child-b {
+  position: relative;
+  z-index: 1;
+  background: #ffd93d;
+  padding: var(--space-xs, 10px);
+  margin: 5px;
+  border-radius: 4px;
+  color: var(--color-text, #333);
 }
 
-.nav-links a:hover {
-  color: #0055ee;
-}
-
-.btn-cta {
-  background: #0055ee;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.btn-cta:hover {
-  background: #0044cc;
-}
-
-/* ---------- 2. HERO SECTION - CENTRING TRICK ---------- */
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-  text-align: center;
-  padding: 20px;
-}
-
-.hero-content h1 {
-  font-size: 56px;
-  margin-bottom: 10px;
-}
-
-.hero-content h1 span {
-  color: #0055ee;
-}
-
-.hero-content .tagline {
-  font-size: 24px;
-  color: #2d3a5c;
-}
-
-.hero-content .sub-text {
-  font-size: 16px;
-  color: #888;
-  margin-top: 10px;
-}
-
-/* ---------- 3. 3-COLUMN SKILLS CARDS ---------- */
-.skills-grid {
-  display: flex;
-  gap: 20px;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.skill-card {
-  flex: 1;
-  background: white;
-  padding: 30px 20px;
-  border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.skill-card .icon {
-  font-size: 40px;
-}
-
-.skill-card h3 {
-  color: #2d3a5c;
-  margin-top: 10px;
-}
-
-.skill-card p {
-  color: #666;
-  font-size: 14px;
-}
-
-/* ---------- 4. 2-COLUMN FEATURES WITH ORDER ---------- */
-.features {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.feature-block {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-
-.feature-block .text {
-  flex: 1;
-}
-
-.feature-block .image {
-  flex: 1;
-  background: #e8ecf1;
-  border-radius: 12px;
-  padding: 60px 20px;
-  text-align: center;
-  font-size: 60px;
-}
-
-/* Feature 1: Image left, Text right */
-.feature-1 .image {
-  order: 1;
-}
-.feature-1 .text {
-  order: 2;
-}
-
-/* Feature 2: Text left, Image right (using order) */
-.feature-2 .image {
-  order: 2;
-}
-.feature-2 .text {
-  order: 1;
-}
-
-.feature-block .text h3 {
-  color: #2d3a5c;
-  font-size: 24px;
-}
-
-.feature-block .text p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* ---------- 5. FOOTER WITH 4 COLUMNS ---------- */
+/* ================================================================
+   FOOTER (Day 3)
+   ================================================================ */
 .footer {
-  background: #0a1628;
-  color: white;
-  padding: 40px 32px 20px;
-  margin-top: 40px;
+  background: var(--color-bg-dark, #0a1628);
+  color: var(--color-white, white);
+  padding: var(--space-lg, 40px) var(--space-md, 32px) var(--space-sm, 20px);
+  margin-top: var(--space-lg, 40px);
 }
 
 .footer-grid {
   display: flex;
-  gap: 40px;
+  gap: var(--space-lg, 40px);
   flex-wrap: wrap;
   max-width: 1100px;
   margin: 0 auto;
@@ -432,8 +585,8 @@ nav > a:hover {
 }
 
 .footer-col h4 {
-  color: #0055ee;
-  margin-bottom: 16px;
+  color: var(--color-primary, #0055ee);
+  margin-bottom: var(--space-sm, 16px);
   font-size: 16px;
 }
 
@@ -441,332 +594,118 @@ nav > a:hover {
   display: block;
   color: #aaa;
   text-decoration: none;
-  margin-bottom: 8px;
-  transition: color 0.2s;
+  margin-bottom: var(--space-xs, 8px);
+  transition: color var(--transition-fast);
 }
 
 .footer-col a:hover {
-  color: white;
+  color: var(--color-white, white);
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  margin-top: 20px;
+  padding-top: var(--space-sm, 20px);
+  margin-top: var(--space-sm, 20px);
   border-top: 1px solid #1a2a4a;
   color: #666;
   font-size: 14px;
 }
 
 /* ================================================================
-   RESPONSIVE DESIGN
+   BACK TO TOP BUTTON (Day 2)
    ================================================================ */
-
-@media (max-width: 768px) {
-  /* Skills cards stack on mobile */
-  .skills-grid {
-    flex-wrap: wrap;
-  }
-
-  .skill-card {
-    flex: 1 1 calc(50% - 20px);
-    min-width: 200px;
-  }
-
-  /* Features stack on mobile */
-  .feature-block {
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  .feature-block .text,
-  .feature-block .image {
-    flex: 0 0 100%;
-  }
-
-  .feature-1 .image {
-    order: 1;
-  }
-  .feature-1 .text {
-    order: 2;
-  }
-  .feature-2 .image {
-    order: 1;
-  }
-  .feature-2 .text {
-    order: 2;
-  }
-
-  /* Hero text smaller */
-  .hero-content h1 {
-    font-size: 36px;
-  }
-
-  .hero-content .tagline {
-    font-size: 18px;
-  }
-
-  /* Footer columns stack */
-  .footer-grid {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .footer-col {
-    flex: 1 1 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Navbar wraps on mobile */
-  .navbar {
-    flex-wrap: wrap;
-    padding: 12px 16px;
-  }
-
-  .nav-links {
-    order: 3;
-    flex: 0 0 100%;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 10px;
-  }
-
-  .skill-card {
-    flex: 1 1 100%;
-  }
-}
-/* ================================================================
-   DAY 4: CSS GRID MASTERY
-   ================================================================ */
-
-/* ---------- 1. GRID-POWERED PAGE LAYOUT (grid-template-areas) ---------- */
-.grid-layout {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: 70px 1fr 60px;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  gap: 16px;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-  min-height: 400px;
-}
-
-.grid-header {
-  grid-area: header;
-  background: #0a1628;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.grid-sidebar {
-  grid-area: sidebar;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-.grid-sidebar h3 {
-  margin-top: 0;
-}
-
-.grid-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.grid-sidebar ul li {
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
-  color: #555;
-}
-
-.grid-main {
-  grid-area: main;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-.grid-main h2 {
-  margin-top: 0;
-}
-
-.grid-footer {
-  grid-area: footer;
-  background: #0a1628;
-  color: #666;
-  padding: 16px 20px;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* ---------- 2. RESPONSIVE GALLERY (auto-fit, minmax) ---------- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-.gallery-item {
-  background: white;
-  padding: 60px 20px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  text-align: center;
-  font-weight: 600;
-  color: #2d3a5c;
-  font-size: 18px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border-color: #0055ee;
-}
-
-/* ---------- 3. PRICING TABLE WITH GRID ---------- */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 0 20px;
-  align-items: start;
-}
-
-.plan {
-  background: white;
-  border-radius: 12px;
-  padding: 32px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  border: 2px solid transparent;
-  text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.plan h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.plan .price {
-  font-size: 36px;
-  font-weight: bold;
-  color: #0055ee;
-  margin: 10px 0 0 0;
-}
-
-.plan .period {
-  color: #888;
-  font-size: 14px;
-  margin-top: 0;
-}
-
-.plan ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  text-align: left;
-}
-
-.plan ul li {
-  padding: 6px 0;
-  color: #555;
-}
-
-.plan button {
-  background: #0055ee;
-  color: white;
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-md, 24px);
+  right: var(--space-md, 24px);
+  background: var(--color-primary, #0055ee);
+  color: var(--color-white, white);
   border: none;
-  padding: 10px 30px;
-  border-radius: 6px;
+  padding: var(--space-xs, 12px) var(--space-sm, 20px);
+  border-radius: 50px;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.3s ease;
+  font-weight: bold;
+  min-height: 44px;
+  min-width: 44px;
+  box-shadow: 0 4px 12px rgba(0, 85, 238, 0.3);
+  transition: all var(--transition-base);
+  z-index: 999;
 }
 
-.plan button:hover {
-  background: #0044cc;
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 85, 238, 0.4);
 }
 
-.plan.featured {
-  border-color: #0055ee;
-  transform: scale(1.05);
-  box-shadow: 0 8px 28px rgba(0, 85, 238, 0.18);
-}
-
-.plan.enterprise {
-  border-color: #0a1628;
-}
-
-/* ---------- 4. BENTO BOX LAYOUT ---------- */
-.bento-grid {
+/* ================================================================
+   SERVICES PAGE GRID (Day 5)
+   ================================================================ */
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 120px);
-  gap: 16px;
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md, 24px);
+  max-width: 1200px;
+  margin: var(--space-lg, 40px) auto;
+  padding: 0 var(--space-sm, 20px);
 }
 
-.bento-item {
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  color: #2d3a5c;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+.service-card {
+  background: var(--color-bg, white);
+  padding: var(--space-lg, 40px);
+  border-radius: var(--radius-lg, 16px);
+  border: 1px solid var(--color-border, #ddd);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  animation: fadeInUp 600ms ease-out forwards;
+  opacity: 0;
 }
 
-.bento-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+.service-card:nth-child(1) { animation-delay: 0ms; }
+.service-card:nth-child(2) { animation-delay: 100ms; }
+.service-card:nth-child(3) { animation-delay: 200ms; }
+.service-card:nth-child(4) { animation-delay: 300ms; }
+.service-card:nth-child(5) { animation-delay: 400ms; }
+.service-card:nth-child(6) { animation-delay: 500ms; }
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
 
-.bento-featured {
-  grid-column: span 2;
-  grid-row: span 2;
-  background: linear-gradient(135deg, #0055ee 0%, #0a1628 100%);
-  color: white;
-  font-size: 24px;
-  border: none;
+.service-icon {
+  font-size: 48px;
+  margin-bottom: var(--space-sm, 16px);
+  display: block;
+  transition: transform var(--transition-fast);
 }
 
-.bento-featured:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 32px rgba(0, 85, 238, 0.3);
+.service-card:hover .service-icon {
+  transform: scale(1.15) rotate(-5deg);
 }
+/* ================================================================
+   RESPONSIVE DESIGN (Mobile-First)
+   ================================================================ */
 
-/* ---------- 5. RESPONSIVE DESIGN FOR DAY 4 ---------- */
-@media (max-width: 768px) {
-  /* Grid layout stacks on mobile */
+/* Tablet: 768px and above */
+@media (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 48px;
+  }
+  
+  .hero-content .tagline {
+    font-size: 24px;
+  }
+  
+  .skills-grid {
+    gap: var(--space-md, 24px);
+  }
+  
+  .footer-grid {
+    gap: var(--space-lg, 40px);
+  }
+  
+  /* Grid layout stacks on tablet */
   .grid-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
@@ -776,29 +715,127 @@ nav > a:hover {
       "sidebar"
       "footer";
   }
-
-  /* Bento grid on mobile */
+  
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 100px);
   }
-
+  
   .bento-featured {
     grid-column: span 2;
     grid-row: span 1;
   }
-
+  
   .plan.featured {
     transform: scale(1);
   }
 }
 
+/* Desktop: 1024px and above */
+@media (min-width: 1024px) {
+  .hero-content h1 {
+    font-size: 64px;
+  }
+  
+  .grid-layout {
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 70px 1fr 60px;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    min-height: 500px;
+  }
+  
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 120px);
+  }
+  
+  .bento-featured {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* Large Desktop: 1440px and above */
+@media (min-width: 1440px) {
+  .skills-grid,
+  .features,
+  .gallery,
+  .pricing-grid,
+  .bento-grid,
+  .services-grid,
+  .grid-layout {
+    max-width: 1200px;
+  }
+}
+
+/* Mobile: 480px and below */
 @media (max-width: 480px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: var(--space-xs, 12px) var(--space-sm, 16px);
+  }
+  
+  .nav-links {
+    order: 3;
+    flex: 0 0 100%;
+    justify-content: center;
+    gap: 16px;
+    margin-top: var(--space-xs, 10px);
+  }
+  
+  .skill-card {
+    flex: 1 1 100%;
+  }
+  
+  .skills-grid {
+    flex-wrap: wrap;
+  }
+  
+  .skill-card {
+    flex: 1 1 calc(50% - var(--space-sm, 20px));
+    min-width: 200px;
+  }
+  
+  .feature-block {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .feature-block .text,
+  .feature-block .image {
+    flex: 0 0 100%;
+  }
+  
+  .feature-1 .image { order: 1; }
+  .feature-1 .text { order: 2; }
+  .feature-2 .image { order: 1; }
+  .feature-2 .text { order: 2; }
+  
+  .hero-content h1 {
+    font-size: 36px;
+  }
+  
+  .hero-content .tagline {
+    font-size: 18px;
+  }
+  
+  .footer-grid {
+    flex-direction: column;
+    gap: var(--space-sm, 20px);
+  }
+  
+  .footer-col {
+    flex: 1 1 100%;
+  }
+  
   .bento-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 80px);
   }
-
+  
   .bento-featured {
     grid-column: span 2;
   }
