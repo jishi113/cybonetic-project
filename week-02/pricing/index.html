@@ -7,22 +7,101 @@
     <title>Pricing - Cybonetic Technologies</title>
   </head>
   <body>
-    <!-- ===== ADD THIS: Sticky Navigation ===== -->
-    <nav class="navbar">
-      <a href="../landing-page/index.html">Home</a>
-      <a href="../pricing/index.html">Pricing</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </nav>
+    <header class="navbar">
+      <a href="../landing-page/index.html" class="logo"
+        >Cybonetic<span>.</span></a
+      >
+      <nav class="nav-links">
+        <a href="../landing-page/index.html">Home</a>
+        <a href="../services/index.html">Services</a>
+        <a href="../pricing/index.html">Pricing</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a href="#" class="btn-cta">Get Started</a>
+    </header>
 
-    <!-- Your existing pricing content here -->
-    <section class="card">
-      <h1>Our Pricing Plans</h1>
-      <h2>Choose the plan that fits your needs</h2>
-      <!-- Your pricing cards here -->
+    <section class="hero" style="min-height: 40vh">
+      <div class="hero-content">
+        <h1>Our <span>Pricing</span></h1>
+        <p class="tagline">Choose the plan that fits your needs</p>
+      </div>
     </section>
 
-    <!-- ===== ADD THIS: Back to Top Button ===== -->
+    <!-- PRICING GRID -->
+    <div class="pricing-grid">
+      <div class="plan">
+        <h3>Basic</h3>
+        <p class="price">$49</p>
+        <p class="period">/ month</p>
+        <ul>
+          <li>✓ 5 Projects</li>
+          <li>✓ 10GB Storage</li>
+          <li>✓ Email Support</li>
+          <li>✗ Analytics</li>
+          <li>✗ Custom Domain</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="plan featured">
+        <h3>Pro ⭐</h3>
+        <p class="price">$99</p>
+        <p class="period">/ month</p>
+        <ul>
+          <li>✓ Unlimited Projects</li>
+          <li>✓ 100GB Storage</li>
+          <li>✓ Priority Support</li>
+          <li>✓ Advanced Analytics</li>
+          <li>✓ Custom Domain</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="plan enterprise">
+        <h3>Enterprise</h3>
+        <p class="price">$199</p>
+        <p class="period">/ month</p>
+        <ul>
+          <li>✓ Unlimited Everything</li>
+          <li>✓ 1TB Storage</li>
+          <li>✓ 24/7 Support</li>
+          <li>✓ Custom Solutions</li>
+          <li>✓ Dedicated Manager</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Team</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <a href="#">Blog</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Testimonials</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">Web Design</a>
+          <a href="#">Development</a>
+          <a href="#">Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="#">Email</a>
+          <a href="#">Phone</a>
+          <a href="#">Social</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Cybonetic Technologies. All rights reserved.
+      </div>
+    </footer>
+
     <button
       class="back-to-top"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
