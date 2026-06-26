@@ -1,10 +1,4 @@
-// ================================================================
 // CALCULATOR - WEEK 3 DAY 3
-// ================================================================
-
-// ================================================================
-// 1. STATE
-// ================================================================
 
 const state = {
   display: "0",
@@ -15,16 +9,8 @@ const state = {
   maxHistory: 5,
 };
 
-// ================================================================
-// 2. DOM REFERENCES
-// ================================================================
-
 const display = document.querySelector("#display");
 const historyList = document.querySelector("#historyList");
-
-// ================================================================
-// 3. DISPLAY FUNCTIONS
-// ================================================================
 
 const updateDisplay = () => {
   // Limit display to 10 significant digits
@@ -34,10 +20,6 @@ const updateDisplay = () => {
   }
   display.textContent = value;
 };
-
-// ================================================================
-// 4. CALCULATE FUNCTION
-// ================================================================
 
 const calculate = (a, b, op) => {
   switch (op) {
@@ -53,10 +35,6 @@ const calculate = (a, b, op) => {
       return b;
   }
 };
-
-// ================================================================
-// 5. HISTORY FUNCTIONS
-// ================================================================
 
 const addHistory = (expression, result) => {
   state.history.unshift({ expression, result });
@@ -74,10 +52,6 @@ const renderHistory = () => {
     historyList.appendChild(li);
   });
 };
-
-// ================================================================
-// 6. INPUT FUNCTIONS
-// ================================================================
 
 const inputDigit = (digit) => {
   if (state.waitingForSecond) {
@@ -143,10 +117,6 @@ const handlePercent = () => {
   updateDisplay();
 };
 
-// ================================================================
-// 7. EVENT DELEGATION - ONE LISTENER FOR ALL BUTTONS
-// ================================================================
-
 document.querySelector(".keypad").addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
@@ -195,10 +165,6 @@ document.querySelector(".keypad").addEventListener("click", (e) => {
   }
 });
 
-// ================================================================
-// 8. KEYBOARD SUPPORT
-// ================================================================
-
 document.addEventListener("keydown", (e) => {
   // Map keys to actions
   const keyMap = {
@@ -246,9 +212,5 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// ================================================================
-// 9. INITIALIZE
-// ================================================================
-
-console.log("✅ Calculator initialized!");
+console.log;
 updateDisplay();
