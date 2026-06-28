@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation - Week 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📝 Form Validation</h1>
+      <p class="subtitle">Real-time validation as you type</p>
+
+      <form class="validated-form" id="signupForm">
+        <!-- Name -->
+        <div class="field-wrapper">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+          />
+          <span class="field-message"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="field-wrapper">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+          />
+          <span class="field-message"></span>
+        </div>
+
+        <!-- Phone -->
+        <div class="field-wrapper">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="9876543210" />
+          <span class="field-message"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="field-wrapper">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Min 8 chars with uppercase, lowercase, number, symbol"
+          />
+          <span class="field-message"></span>
+        </div>
+
+        <!-- Username -->
+        <div class="field-wrapper">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="3-20 chars, lowercase, numbers, underscores"
+          />
+          <span class="field-message"></span>
+        </div>
+
+        <!-- URL -->
+        <div class="field-wrapper">
+          <label for="url">Website URL</label>
+          <input
+            type="url"
+            id="url"
+            name="url"
+            placeholder="https://example.com"
+          />
+          <span class="field-message"></span>
+        </div>
+
+        <!-- Pincode -->
+        <div class="field-wrapper">
+          <label for="pincode">PIN Code</label>
+          <input
+            type="text"
+            id="pincode"
+            name="pincode"
+            placeholder="6-digit PIN"
+          />
+          <span class="field-message"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Form</button>
+      </form>
+
+      <div id="successMessage" class="success-message" style="display: none">
+        ✅ Form submitted successfully!
+      </div>
+    </div>
+
+    <script src="validator.js"></script>
+  </body>
+</html>

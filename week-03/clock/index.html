@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock - Week 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🕐 Digital Clock</h1>
+
+      <div class="clock">
+        <div class="time" id="time">00:00:00</div>
+        <div class="date" id="date">Monday, 1 Jan 2026</div>
+        <div class="seconds-bar-wrapper">
+          <div class="seconds-bar" id="secondsBar"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn-toggle" id="toggleFormat">Switch to 24h</button>
+      </div>
+
+      <div class="info">
+        <p>Current time updates every second</p>
+        <p>Click the button to toggle 12h/24h format</p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
