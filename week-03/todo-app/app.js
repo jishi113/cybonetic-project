@@ -1,18 +1,6 @@
-// ================================================================
-// TO-DO APP - WEEK 3 DAY 4
-// ================================================================
-
-// ================================================================
-// 1. STATE
-// ================================================================
-
 let todos = [];
 let filter = "all";
 let sortBy = "date";
-
-// ================================================================
-// 2. DOM REFERENCES
-// ================================================================
 
 const todoList = document.querySelector(".todo-list");
 const todoForm = document.querySelector(".todo-form");
@@ -22,10 +10,6 @@ const clearCompletedBtn = document.querySelector(".btn-clear-completed");
 const countDisplay = document.querySelector(".count");
 const emptyState = document.querySelector(".empty-state");
 const sortSelect = document.querySelector("#sortBy");
-
-// ================================================================
-// 3. HELPERS
-// ================================================================
 
 const uid = () =>
   `todo_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
@@ -43,10 +27,6 @@ const loadFromStorage = (key, defaultValue = null) => {
 const saveToStorage = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
 };
-
-// ================================================================
-// 4. CRUD OPERATIONS
-// ================================================================
 
 const addTodo = (text) => {
   if (!text.trim()) return;
@@ -80,10 +60,6 @@ const clearCompleted = () => {
   saveAndRender();
 };
 
-// ================================================================
-// 5. SORTING
-// ================================================================
-
 const sortTodos = (todosArray) => {
   const sorted = [...todosArray];
   switch (sortBy) {
@@ -101,10 +77,6 @@ const sortTodos = (todosArray) => {
   return sorted;
 };
 
-// ================================================================
-// 6. FILTERING
-// ================================================================
-
 const getFilteredTodos = () => {
   let filtered = todos;
   switch (filter) {
@@ -119,10 +91,6 @@ const getFilteredTodos = () => {
   }
   return sortTodos(filtered);
 };
-
-// ================================================================
-// 7. RENDER
-// ================================================================
 
 const render = () => {
   const filtered = getFilteredTodos();
@@ -168,18 +136,10 @@ const render = () => {
   saveToStorage("todoSort", sortBy);
 };
 
-// ================================================================
-// 8. SAVE AND RENDER
-// ================================================================
-
 const saveAndRender = () => {
   saveToStorage("todos", todos);
   render();
 };
-
-// ================================================================
-// 9. DRAG AND DROP
-// ================================================================
 
 let dragStartId = null;
 
@@ -227,10 +187,6 @@ todoList.addEventListener("drop", (e) => {
   item.style.borderTop = "none";
   dragStartId = null;
 });
-
-// ================================================================
-// 10. EVENT LISTENERS
-// ================================================================
 
 // Form submit - Add todo
 todoForm.addEventListener("submit", (e) => {
@@ -284,10 +240,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// ================================================================
-// 11. KEYBOARD NAVIGATION - Delete selected todo
-// ================================================================
-
 document.addEventListener("keydown", (e) => {
   if (e.key === "Delete" || e.key === "Backspace") {
     // Check if we're in an input
@@ -301,10 +253,6 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
-
-// ================================================================
-// 12. INITIALIZE
-// ================================================================
 
 const init = () => {
   // Load todos
