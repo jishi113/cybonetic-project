@@ -1,10 +1,4 @@
-// ============================================================
-// WEEK 3 - DAY 1: VARIABLES, TYPES & FUNCTIONS
-// ============================================================
 
-// ============================================================
-// 1. TYPE COERCION EXAMPLES
-// ============================================================
 
 console.log("=== TYPE COERCION EXAMPLES ===");
 
@@ -46,9 +40,7 @@ console.log(Boolean("0")); // true
 console.log(Boolean([])); // true
 console.log(Boolean({})); // true
 
-// ============================================================
-// 2. CALCULATOR USING CLOSURES
-// ============================================================
+
 
 function makeCalculator() {
   let result = 0;
@@ -98,9 +90,7 @@ try {
   console.log("Error caught:", error.message);
 }
 
-// ============================================================
-// 3. GRADE STUDENT
-// ============================================================
+
 
 const gradeStudent = (score) => {
   return score >= 90
@@ -121,9 +111,7 @@ console.log("Score 75:", gradeStudent(75));
 console.log("Score 65:", gradeStudent(65));
 console.log("Score 55:", gradeStudent(55));
 
-// ============================================================
-// 4. TEMPERATURE CONVERTERS
-// ============================================================
+
 
 const celsiusToFahrenheit = (c) => (c * 9) / 5 + 32;
 const fahrenheitToCelsius = (f) => ((f - 32) * 5) / 9;
@@ -134,9 +122,7 @@ console.log("100°C =", celsiusToFahrenheit(100), "°F");
 console.log("32°F =", fahrenheitToCelsius(32), "°C");
 console.log("212°F =", fahrenheitToCelsius(212), "°C");
 
-// ============================================================
-// 5. TEMPORAL DEAD ZONE DEMO
-// ============================================================
+
 
 console.log("\n=== TEMPORAL DEAD ZONE DEMO ===");
 
@@ -166,9 +152,7 @@ console.log("var: Hoisted, initialized as undefined (no TDZ)");
 console.log("let/const: Hoisted but NOT initialized (TDZ exists)");
 console.log("TDZ prevents accessing variables before declaration");
 
-// ============================================================
-// BONUS: DEMONSTRATE ALL DATA TYPES
-// ============================================================
+
 
 console.log("\n=== DATA TYPES DEMONSTRATION ===");
 
@@ -191,4 +175,4 @@ console.log("Array:", typeof arrayType); // "object"
 console.log("Array check:", Array.isArray(arrayType)); // true
 console.log("Function:", typeof functionType);
 
-console.log("\n✅ All Day 1 exercises completed!");
+console.log;
