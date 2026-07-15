@@ -1,10 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-// =============================================
-// 1. BASIC ROUTES
-// =============================================
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,41 +20,6 @@ Route::get('/contact', function () {
             <a href="/">← Back Home</a>';
 })->name('contact');
 
-Route::get('/students', function () {
-    $students = [
-        ['id' => 1, 'name' => 'Jishi', 'gpa' => 8.9],
-        ['id' => 2, 'name' => 'Priya', 'gpa' => 9.1],
-        ['id' => 3, 'name' => 'Rahul', 'gpa' => 7.5],
-    ];
-    
-    $html = '<h1>📚 Students List</h1><ul>';
-    foreach ($students as $s) {
-        $html .= '<li><a href="/students/' . $s['id'] . '">' . $s['name'] . ' (GPA: ' . $s['gpa'] . ')</a></li>';
-    }
-    $html .= '</ul><a href="/">← Back Home</a>';
-    
-    return $html;
-})->name('students.index');
-
-Route::get('/students/{id}', function (int $id) {
-    $students = [
-        1 => ['id' => 1, 'name' => 'Jishi', 'gpa' => 8.9],
-        2 => ['id' => 2, 'name' => 'Priya', 'gpa' => 9.1],
-        3 => ['id' => 3, 'name' => 'Rahul', 'gpa' => 7.5],
-    ];
-    
-    if (!isset($students[$id])) {
-        return '<h1>❌ 404</h1><p>Student not found</p><a href="/students">← Back</a>';
-    }
-    
-    $s = $students[$id];
-    return '<h1>👤 Student Details</h1>
-            <p><strong>ID:</strong> ' . $s['id'] . '</p>
-            <p><strong>Name:</strong> ' . $s['name'] . '</p>
-            <p><strong>GPA:</strong> ' . $s['gpa'] . '</p>
-            <a href="/students">← Back to List</a>';
-})->name('students.show')->where('id', '[0-9]+');
-
 Route::get('/dashboard', function () {
     return '<h1>📊 Dashboard</h1>
             <p>Welcome to your dashboard!</p>
@@ -66,17 +28,10 @@ Route::get('/dashboard', function () {
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/students">Students</a></li>
-                <li><a href="/admin/users">Admin Users</a></li>
-                <li><a href="/admin/settings">Admin Settings</a></li>
             </ul>';
 })->name('dashboard');
 
-// =============================================
-// 2. ADMIN ROUTE GROUP
-// =============================================
-
 Route::prefix('admin')->group(function () {
-    
     Route::get('/users', function () {
         return '<h1>👥 Admin: Users</h1>
                 <p>List of all users (admin only)</p>
@@ -98,12 +53,7 @@ Route::prefix('admin')->group(function () {
                 </ul>
                 <a href="/dashboard">← Back to Dashboard</a>';
     })->name('admin.settings');
-    
 });
-
-// =============================================
-// 3. TEST ROUTE
-// =============================================
 
 Route::get('/test-routes', function () {
     return '<h1>🧪 Route Testing</h1>
@@ -121,3 +71,9 @@ Route::get('/test-routes', function () {
             <br>
             <a href="/">← Back Home</a>';
 })->name('test.routes');
+
+// =============================================
+// STUDENT RESOURCE ROUTES
+// =============================================
+
+Route::resource('students', StudentController::class);
