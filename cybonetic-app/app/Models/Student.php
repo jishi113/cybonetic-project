@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Notifiable;
 
     protected $fillable = [
         'department_id',
@@ -27,10 +28,8 @@ class Student extends Model
         return $this->belongsTo(Department::class);
     }
 
-    public function courses()
+    public function getFullNameAttribute()
     {
-        return $this->belongsToMany(Course::class, 'student_courses')
-                    ->withPivot('grade', 'semester')
-                    ->withTimestamps();
+        return $this->first_name . ' ' . $this->last_name;
     }
 }
