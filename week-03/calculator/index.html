@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator - Week 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculator</h1>
+
+      <!-- Calculator -->
+      <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="keypad">
+          <button class="btn-clear" data-action="clear">AC</button>
+          <button class="btn-sign" data-action="sign">+/-</button>
+          <button class="btn-pct" data-action="percent">%</button>
+          <button class="btn-op" data-value="/">÷</button>
+
+          <button class="btn-num" data-value="7">7</button>
+          <button class="btn-num" data-value="8">8</button>
+          <button class="btn-num" data-value="9">9</button>
+          <button class="btn-op" data-value="*">×</button>
+
+          <button class="btn-num" data-value="4">4</button>
+          <button class="btn-num" data-value="5">5</button>
+          <button class="btn-num" data-value="6">6</button>
+          <button class="btn-op" data-value="-">−</button>
+
+          <button class="btn-num" data-value="1">1</button>
+          <button class="btn-num" data-value="2">2</button>
+          <button class="btn-num" data-value="3">3</button>
+          <button class="btn-op" data-value="+">+</button>
+
+          <button class="btn-num span2" data-value="0">0</button>
+          <button class="btn-num" data-value=".">.</button>
+          <button class="btn-eq" data-action="equals">=</button>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="history">
+        <h3>History</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

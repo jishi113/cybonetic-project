@@ -1,0 +1,139 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0a1628;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: linear-gradient(135deg, #1a2a4a, #0a1628);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+h1 {
+  color: #0055ee;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.clock {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 30px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.time {
+  font-size: 72px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Courier New", monospace;
+  letter-spacing: 4px;
+  text-shadow: 0 0 40px rgba(0, 85, 238, 0.2);
+}
+
+.time .seconds {
+  font-size: 36px;
+  color: #0055ee;
+  font-weight: 300;
+}
+
+.time[data-period="AM"]::after,
+.time[data-period="PM"]::after {
+  content: attr(data-period);
+  font-size: 24px;
+  color: #00c896;
+  margin-left: 8px;
+  font-weight: 300;
+}
+
+.date {
+  color: #8899bb;
+  font-size: 18px;
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+
+.seconds-bar-wrapper {
+  margin-top: 20px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.seconds-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0055ee, #00c896);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.controls {
+  margin-top: 24px;
+}
+
+.btn-toggle {
+  background: transparent;
+  color: #8899bb;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background: rgba(0, 85, 238, 0.1);
+  border-color: #0055ee;
+  color: #ffffff;
+}
+
+.info {
+  margin-top: 24px;
+  color: #445566;
+  font-size: 13px;
+}
+
+.info p {
+  margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .time {
+    font-size: 48px;
+  }
+
+  .time .seconds {
+    font-size: 24px;
+  }
+
+  .date {
+    font-size: 16px;
+  }
+}
