@@ -18,6 +18,10 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    public function assignedLeads()
+{
+    return $this->hasMany(\App\Models\Lead::class, 'assigned_to');
+}
     protected $fillable = [
         'name',
         'email',
