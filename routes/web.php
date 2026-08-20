@@ -29,14 +29,27 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/leads/trashed', [LeadController::class, 'trashed'])->name('leads.trashed');
-    Route::post('/leads/{id}/restore', [LeadController::class, 'restore'])->name('leads.restore');
-    Route::patch('/leads/{lead}/status', [LeadController::class, 'updateStatus'])->name('leads.updateStatus');
+    Route::get('/leads/trashed', [LeadController::class, 'trashed'])
+        ->name('leads.trashed');
+
+    Route::post('/leads/{id}/restore', [LeadController::class, 'restore'])
+        ->name('leads.restore');
+
+    Route::patch('/leads/{lead}/status', [LeadController::class, 'updateStatus'])
+        ->name('leads.updateStatus');
+
     Route::resource('leads', LeadController::class);
+
     Route::resource('companies', CompanyController::class);
-    Route::get('/leads-export/csv', [ExportController::class, 'leads'])->name('leads.export');
-    Route::post('/leads/{lead}/activities', [ActivityController::class, 'store'])->name('activities.store');
-    Route::delete('/activities/{activity}', [ActivityController::class, 'destroy'])->name('activities.destroy');
+
+    Route::get('/leads-export/csv', [ExportController::class, 'leads'])
+        ->name('leads.export');
+
+    Route::post('/leads/{lead}/activities', [ActivityController::class, 'store'])
+        ->name('activities.store');
+
+    Route::delete('/activities/{activity}', [ActivityController::class, 'destroy'])
+        ->name('activities.destroy');
 });
 
 require __DIR__.'/auth.php';
