@@ -17,6 +17,20 @@
 
             <div class="bg-white shadow rounded p-6 space-y-4">
 
+                {{-- Status update dropdown --}}
+                <form method="POST" action="{{ route('leads.updateStatus', $lead) }}" class="flex items-center gap-2">
+                    @csrf
+                    @method('PATCH')
+                    <label class="text-sm font-medium text-gray-700">Status:</label>
+                    <select name="status" onchange="this.form.submit()" class="border rounded px-3 py-2">
+                        @foreach(\App\Models\Lead::STATUSES as $key => $val)
+                            <option value="{{ $key }}" {{ $lead->status === $key ? 'selected' : '' }}>
+                                {{ $val['label'] }}
+                            </option>
+                        @endforeach
+                    </select>
+                </form>
+
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <div class="text-sm text-gray-500">Contact Name</div>
@@ -33,12 +47,6 @@
                     <div>
                         <div class="text-sm text-gray-500">Company</div>
                         <div class="font-medium">{{ $lead->company->name ?? '—' }}</div>
-                    </div>
-                    <div>
-                        <div class="text-sm text-gray-500">Status</div>
-                        <div class="font-medium">
-                            <span class="px-2 py-1 text-xs rounded bg-gray-100">{{ $lead->status_badge }}</span>
-                        </div>
                     </div>
                     <div>
                         <div class="text-sm text-gray-500">Source</div>
@@ -74,7 +82,40 @@
                 </div>
             </div>
 
-            {{-- Activities --}}
+            {{-- Add Activity Form --}}
+            <div class="bg-white shadow rounded p-6 mt-4">
+                <h3 class="font-semibold text-gray-800 mb-3">Log Activity</h3>
+                <form method="POST" action="{{ route('activities.store', $lead) }}" class="space-y-3">
+                    @csrf
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Type *</label>
+                            <select name="type" class="mt-1 block w-full border rounded px-3 py-2">
+                                @foreach(['call','email','meeting','demo','follow_up','note'] as $type)
+                                    <option value="{{ $type }}">{{ ucfirst(str_replace('_',' ',$type)) }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Date</label>
+                            <input type="datetime-local" name="occurred_at" class="mt-1 block w-full border rounded px-3 py-2">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Subject *</label>
+                        <input type="text" name="subject" class="mt-1 block w-full border rounded px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Description</label>
+                        <textarea name="description" rows="2" class="mt-1 block w-full border rounded px-3 py-2"></textarea>
+                    </div>
+                    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                        Log Activity
+                    </button>
+                </form>
+            </div>
+
+            {{-- Activities Timeline --}}
             <div class="bg-white shadow rounded p-6 mt-4">
                 <h3 class="font-semibold text-gray-800 mb-3">Activity History</h3>
                 @forelse($lead->activities as $activity)

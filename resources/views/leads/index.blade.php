@@ -20,7 +20,6 @@
                 <div class="mb-4 p-3 bg-green-100 text-green-800 rounded">{{ session('success') }}</div>
             @endif
 
-            {{-- Search & Filter --}}
             <form method="GET" class="mb-4 flex flex-wrap gap-2">
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Search leads..."
                        class="border rounded px-3 py-2 flex-1 min-w-[200px]">
